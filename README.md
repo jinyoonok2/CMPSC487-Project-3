@@ -38,17 +38,17 @@ please go to the link: [http://127.0.0.1:5000/](http://127.0.0.1:5000/) (local)
 
 ![Description of Image1](github_images/1.png)
 
-the homepage(index) enlists the item information from the MongoDB.
-1) You can search the item with the search bar at the top
-2) You can create new items and save their information up on the DB & save the image automatiaclly on your cloned github repo(since there is no server and it is local application, images will be saved on the repository of your machine)
-3) You can edit or delete each item with the buttons at the rightside of each item panel.
-4) As required, items are sorted by their name when they are displayed.
 
-For the items uploaded on DB as initial seed data(such like camera and printer as you can see on the image), you can find them in itemsCollection.js file in this repository.
+the user will get to access login page first when run the app.py program.
+
+user can use any credentials from tenants, staff, or managers collections. (the initial population of the documents are given in the 'collections' folder, you must use their email and password)
+
+password is identical all across the users for convenience: **jinyoon12**
 
 ![Description of Image2](github_images/2.png)
 
-First we will check the search function of the program.
+First we will check the 'tenants' functional requirement using one of the tenant account.
+tenant id (_id) uses the auto generated ObjectId by MongoDB.
 User can search the wanted item by putting its name on the search bar then clicking the search button.
 Since the search function takes cares of case sensitive and blank space, user do not need to worry about the capitalized letter or blank space.
 (ex: smart phone also works for Smartphone)
