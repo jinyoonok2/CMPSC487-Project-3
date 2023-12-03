@@ -1,5 +1,5 @@
-# CMPSC487-Project-2
-## CMPSC487 Project 2 Web Based Application for Item management
+# CMPSC487-Project-3
+## CMPSC487 Project 3 Web Interface for Maintenance and User Management system.
 
 _Code was built on Pycharm IDE for Python programming_
 
@@ -11,8 +11,8 @@ _Code was built on Pycharm IDE for Python programming_
 First, navigate to the directory where you want to store the project in the terminal. Then, clone the project repository:
 
 ```
-git clone https://github.com/jinyoonok2/CMPSC487-Project-2.git
-cd CMPSC487-Project-2
+git clone https://github.com/jinyoonok2/CMPSC487-Project-3.git
+cd CMPSC487-Project-3
 ```
 
 or you can use github Desktop to alternate this process.
