@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Maintenance Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            width: 100%;
+            max-width: 700px; /* Adjusted width for better layout */
+            margin: auto;
+            padding: 20px;
+            box-sizing: border-box; /* Ensures padding is included in width */
+            display: flex;
+            flex-direction: column;
+            align-items: stretch; /* Ensures children (input, textarea) stretch to fill the width */
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type=text],
+        textarea,
+        input[type=file] {
+            width: calc(100% - 40px); /* Calculate width, accounting for padding */
+            padding: 10px; /* Consistent padding for all inputs */
+            margin: 10px 20px; /* Consistent margin for all inputs */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group.button-group {
+            display: flex;
+            justify-content: flex-end; /* Aligns submit button to the right */
+        }
+        input[type=submit] {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            margin-right: 20px; /* Right margin for alignment */
+        }
+        input[type=submit]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form action="/submit-maintenance-request" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="tenantID">Tenant ID:</label>
+                <input type="text" id="tenantID" name="tenantID" value="{{ tenant_info._id }}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="apartmentNumber">Apartment Number:</label>
+                <input type="text" id="apartmentNumber" name="apartmentNumber" value="{{ tenant_info.apartmentNumber }}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="problemArea">Problem Area:</label>
+                <input type="text" id="problemArea" name="problemArea" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="photo">Upload Image:</label>
+                <input type="file" id="photo" name="photo">
+            </div>
+            <div class="form-group button-group">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

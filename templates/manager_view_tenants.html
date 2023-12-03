@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Tenants</title>
+    <style>
+        .tenant-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .tenant-info {
+            flex-grow: 1;
+        }
+        .tenant-actions {
+            display: flex;
+            gap: 10px;
+        }
+        .tenant-actions button {
+            padding: 5px 10px;
+        }
+        .create-button {
+            background-color: green;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tenants List</h1>
+    <form action="/manager-update-tenant" method="get">
+    <button type="submit">Create New Tenant</button>
+    </form>
+    <div id="tenants">
+        {% for tenant in tenants %}
+        <div class="tenant-item">
+            <div class="tenant-info">
+                <h2 style="font-size: larger; font-weight: bold;">{{ tenant.name }}</h2>
+                <p>ID: {{ tenant._id }}</p>
+                <p>Phone: {{ tenant.phoneNumber }}</p>
+                <p>Email: {{ tenant.email }}</p>
+                <p>Check-in Date: {{ tenant.checkInDate }}</p>
+                <p>Check-out Date: {{ tenant.checkOutDate }}</p>
+                <p>Apartment Number: {{ tenant.apartmentNumber }}</p>
+            </div>
+            <div class="tenant-actions">
+                <form action="/delete-tenant" method="post">
+                <input type="hidden" name="tenant_id" value="{{ tenant._id }}">
+                <button type="submit">Delete</button>
+                </form>
+                <form action="/manager-update-tenant" method="get">
+                    <input type="hidden" name="tenant_id" value="{{ tenant._id }}">
+                    <button type="submit">Edit</button>
+                </form>
+            </div>
+        </div>
+        {% else %}
+        <p>No tenants found.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

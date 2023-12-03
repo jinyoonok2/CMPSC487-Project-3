@@ -1,0 +1,47 @@
+[
+    {
+    "name": "Alice Johnson",
+    "phoneNumber": "555-0101",
+    "email": "alice.johnson@example.com",
+    "checkInDate": "2023-01-15",
+    "checkOutDate": "2023-07-15",
+    "apartmentNumber": "A1",
+    "password": "jinyoon12"
+    },
+    {
+    "name": "Bob Smith",
+    "phoneNumber": "555-0202",
+    "email": "bob.smith@example.com",
+    "checkInDate": "2023-02-01",
+    "checkOutDate": "2023-08-01",
+    "apartmentNumber": "A2",
+    "password": "jinyoon12"
+    },
+    {
+    "name": "Carla Martinez",
+    "phoneNumber": "555-0303",
+    "email": "carla.martinez@example.com",
+    "checkInDate": "2023-03-10",
+    "checkOutDate": "2023-09-10",
+    "apartmentNumber": "B1",
+    "password": "jinyoon12"
+    },
+    {
+    "name": "David Lee",
+    "phoneNumber": "555-0404",
+    "email": "david.lee@example.com",
+    "checkInDate": "2023-04-05",
+    "checkOutDate": "2023-10-05",
+    "apartmentNumber": "B2",
+    "password": "jinyoon12"
+    },
+    {
+    "name": "Eva Green",
+    "phoneNumber": "555-0505",
+    "email": "eva.green@example.com",
+    "checkInDate": "2023-05-20",
+    "checkOutDate": "2023-11-20",
+    "apartmentNumber": "C1",
+    "password": "jinyoon12"
+    }
+]

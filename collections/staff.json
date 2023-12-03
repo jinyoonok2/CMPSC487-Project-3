@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Michael Thompson",
+    "email": "michael.thompson@example.com",
+    "phone": "555-1001",
+    "password": "jinyoon12"
+  },
+  {
+    "name": "Sarah Parker",
+    "email": "sarah.parker@example.com",
+    "phone": "555-1002",
+    "password": "jinyoon12"
+  },
+  {
+    "name": "James Lee",
+    "email": "james.lee@example.com",
+    "phone": "555-1003",
+    "password": "jinyoon12"
+  }
+]

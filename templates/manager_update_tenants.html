@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create/Edit Tenant</title>
+</head>
+<body>
+    <h1>{{ mode }} Tenant</h1>
+
+    <form action="{{ url_for('submit_tenant_form') }}" method="post">
+    <div class="form-group">
+        <label for="tenant_id">Tenant ID</label>
+        <input type="text" id="tenant_id" name="tenant_id" value="{{ tenant._id if tenant else '' }}" readonly>
+    </div>
+
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Name" value="{{ tenant.name if tenant else '' }}">
+    </div>
+
+    <div class="form-group">
+        <label for="phone_number">Phone Number</label>
+        <input type="text" id="phone_number" name="phone_number" placeholder="Phone Number" value="{{ tenant.phoneNumber if tenant else '' }}">
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email" value="{{ tenant.email if tenant else '' }}">
+    </div>
+
+    <div class="form-group">
+        <label for="check_in_date">Check-In Date</label>
+        <input type="date" id="check_in_date" name="check_in_date" placeholder="Check-in Date" value="{{ tenant.checkInDate if tenant else '' }}">
+    </div>
+
+    <div class="form-group">
+        <label for="check_out_date">Check-Out Date</label>
+        <input type="date" id="check_out_date" name="check_out_date" placeholder="Check-out Date" value="{{ tenant.checkOutDate if tenant else '' }}">
+    </div>
+
+    <div class="form-group">
+        <label for="apartment_number">Apartment Number</label>
+        <input type="text" id="apartment_number" name="apartment_number" placeholder="Apartment Number" value="{{ tenant.apartmentNumber if tenant else '' }}">
+    </div>
+
+    <button type="submit">{{ mode }}</button>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Maintenance Requests</title>
+    <!-- Add any necessary CSS links here -->
+    <style>
+        .request-panel {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: flex;
+        }
+        .photo-box {
+            width: 150px;
+            height: 150px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f7f7f7;
+        }
+        .request-details {
+            flex-grow: 1;
+        }
+        .complete-button {
+            background-color: green;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+        .complete-button[disabled] {
+            background-color: grey;
+            cursor: default;
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Maintenance Requests</h1>
+    <!-- Search Form -->
+    <form action="/staff-view-requests" method="get">
+        <input type="text" name="apartment_number" placeholder="Apartment Number">
+        <input type="text" name="problem_area" placeholder="Problem Area">
+        <select name="status">
+            <option value="">Any Status</option>
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+        </select>
+        <input type="date" name="start_date" placeholder="Start Date">
+        <input type="date" name="end_date" placeholder="End Date">
+        <button type="submit">Search</button>
+        <!-- Date Range Fields -->
+    </form>
+
+    <div id="requests">
+        {% for request in requests %}
+        <div class="request-panel">
+            <div class="photo-box">
+                {% if request['photo'] %}
+                    <img src="{{ url_for('static', filename=request.photo) }}" alt="Maintenance Request Photo">
+                {% else %}
+                    <span>[No photo]</span>
+                {% endif %}
+            </div>
+            <div class="request-details">
+                <p>Tenant ID: {{ request['tenantID'] }}</p>
+                <p>Apartment Number: {{ request['apartmentNumber'] }}</p>
+                <p>Problem Area: {{ request['problemArea'] }}</p>
+                <p>Description: {{ request['description'] }}</p>
+                <p>Request Date: {{ request['requestDate'] }}</p>
+                <p>Status: {{ request['status'] }}</p>
+                <form action="/complete-maintenance-request" method="post">
+                    <input type="hidden" name="request_id" value="{{ request['_id'] }}">
+                    <button type="submit" class="complete-button" {% if request['status'] != 'pending' %}disabled{% endif %}>Complete</button>
+                </form>
+            </div>
+        </div>
+        {% else %}
+        <p>No maintenance requests found.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
