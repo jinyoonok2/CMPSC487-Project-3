@@ -6,6 +6,7 @@
     "checkInDate": "2023-01-15",
     "checkOutDate": "2023-07-15",
     "apartmentNumber": "A1",
+    "phone" : "555-1001",
     "password": "jinyoon12"
     },
     {
@@ -15,6 +16,7 @@
     "checkInDate": "2023-02-01",
     "checkOutDate": "2023-08-01",
     "apartmentNumber": "A2",
+    "phone" : "555-1001",
     "password": "jinyoon12"
     },
     {
@@ -24,6 +26,7 @@
     "checkInDate": "2023-03-10",
     "checkOutDate": "2023-09-10",
     "apartmentNumber": "B1",
+    "phone" : "555-1001",
     "password": "jinyoon12"
     },
     {
@@ -33,6 +36,7 @@
     "checkInDate": "2023-04-05",
     "checkOutDate": "2023-10-05",
     "apartmentNumber": "B2",
+    "phone" : "555-1001",
     "password": "jinyoon12"
     },
     {
@@ -42,6 +46,7 @@
     "checkInDate": "2023-05-20",
     "checkOutDate": "2023-11-20",
     "apartmentNumber": "C1",
+    "phone" : "555-1001",
     "password": "jinyoon12"
     }
 ]

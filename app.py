@@ -6,6 +6,9 @@ from datetime import datetime, timedelta
 from werkzeug.utils import secure_filename
 from bson import ObjectId
 
+import webbrowser
+from threading import Timer
+
 connection = get_db_connection()
 app = Flask(__name__)
 app.secret_key = 'secret_key'
@@ -275,5 +278,11 @@ def delete_tenant():
         tenants_collection.delete_one({'_id': ObjectId(tenant_id)})
     return redirect(url_for('manager_view_tenants'))
 
+# Function to open the browser
+def open_browser():
+    webbrowser.open_new('http://127.0.0.1:5000/')
+
 if __name__ == '__main__':
+    if os.environ.get('WERKZEUG_RUN_MAIN') == 'true':
+        Timer(1, lambda: webbrowser.open_new('http://127.0.0.1:5000/')).start()
     app.run(debug=True)
