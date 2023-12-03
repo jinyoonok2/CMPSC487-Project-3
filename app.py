@@ -21,7 +21,7 @@ managers_collection = connection["managers"]
 maintenance_requests_collection = connection["maintenance_requests"]
 
 # Ensure the 'images' folder exists
-IMAGES_DIR = os.path.join(app.root_path, 'images')
+IMAGES_DIR = os.path.join(app.root_path, 'static/images')
 os.makedirs(IMAGES_DIR, exist_ok=True)
 
 
@@ -143,7 +143,7 @@ def submit_maintenance_request():
         filename = secure_filename(photo.filename)
         save_path = os.path.join(IMAGES_DIR, filename)
         photo.save(save_path)
-        photo_path = f'images/{filename}'
+        photo_path = f'/images/{filename}'
 
     # Create document for the maintenance request
     maintenance_request = {
